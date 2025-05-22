@@ -1,0 +1,16 @@
+[
+  {
+    "timestamp": "00:00:05",
+    "location": "Gate",
+    "altitude": 5.2,
+    "battery": 98,
+    "status": "monitoring"
+  },
+  {
+    "timestamp": "00:00:10",
+    "location": "Gate",
+    "altitude": 5.1,
+    "battery": 97,
+    "status": "monitoring"
+  }
+]
