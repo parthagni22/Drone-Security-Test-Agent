@@ -1,237 +1,252 @@
 {
-  "total_frames": 918,
+  "total_frames": 360,
+  "total_detections": 54,
+  "total_alerts": 0,
   "recent_detections": [
     {
-      "timestamp": "00:00:30",
-      "message": "00:00:30 - car spotted at Gate (confidence: 0.91)",
+      "timestamp": "00:00:12",
+      "message": "00:00:12 - truck spotted at Gate (confidence: 0.86)",
       "detection": {
-        "class_id": 2,
-        "class_name": "car",
-        "confidence": 0.9094230170355903,
+        "class_id": 7,
+        "class_name": "truck",
+        "confidence": 0.8586436515981892,
         "bbox": [
-          864,
-          1536,
-          1296,
-          2304
+          333,
+          275,
+          850,
+          541
         ],
-        "timestamp": "00:00:30",
+        "timestamp": "00:00:12",
         "location": "Gate",
-        "first_seen": "00:00:30",
-        "duration": 0.0,
-        "count": 916,
+        "method": "CV",
+        "first_seen": "00:00:12",
+        "duration": 0,
+        "count": 1,
         "altitude": 5.1,
         "drone_status": "monitoring",
-        "description": "Car detected at Gate, 00:00:30"
+        "description": "Truck spotted at Gate, 00:00:12"
       }
     },
     {
-      "timestamp": "00:00:30",
-      "message": "00:00:30 - car spotted at Gate (confidence: 0.90)",
+      "timestamp": "00:00:13",
+      "message": "00:00:13 - person spotted at Driveway (confidence: 0.95)",
       "detection": {
-        "class_id": 2,
-        "class_name": "car",
-        "confidence": 0.901141845703125,
+        "class_id": 0,
+        "class_name": "person",
+        "confidence": 0.9500000000000001,
         "bbox": [
-          144,
-          2816,
-          576,
-          3584
+          210,
+          284,
+          342,
+          428
         ],
-        "timestamp": "00:00:30",
-        "location": "Gate",
-        "first_seen": "00:00:30",
-        "duration": 0.0,
-        "count": 916,
-        "altitude": 5.1,
+        "timestamp": "00:00:13",
+        "location": "Driveway",
+        "method": "CV",
+        "first_seen": "00:00:13",
+        "duration": 0,
+        "count": 1,
+        "altitude": 4.8,
         "drone_status": "monitoring",
-        "description": "Car detected at Gate, 00:00:30"
+        "description": "Person detected at Driveway during nighttime (00:00:13)"
       }
     },
     {
-      "timestamp": "00:00:30",
-      "message": "00:00:30 - car spotted at Gate (confidence: 0.90)",
+      "timestamp": "00:00:13",
+      "message": "00:00:13 - truck spotted at Driveway (confidence: 0.82)",
       "detection": {
-        "class_id": 2,
-        "class_name": "car",
-        "confidence": 0.9003809787326389,
+        "class_id": 7,
+        "class_name": "truck",
+        "confidence": 0.8155402971452639,
         "bbox": [
-          144,
-          256,
-          576,
-          1024
+          877,
+          344,
+          1238,
+          526
         ],
-        "timestamp": "00:00:30",
-        "location": "Gate",
-        "first_seen": "00:00:30",
-        "duration": 0.0,
-        "count": 917,
-        "altitude": 5.1,
+        "timestamp": "00:00:13",
+        "location": "Driveway",
+        "method": "CV",
+        "first_seen": "00:00:13",
+        "duration": 0,
+        "count": 1,
+        "altitude": 4.8,
         "drone_status": "monitoring",
-        "description": "Car detected at Gate, 00:00:30"
+        "description": "Truck spotted at Driveway, 00:00:13"
       }
     },
     {
-      "timestamp": "00:00:30",
-      "message": "00:00:30 - car spotted at Gate (confidence: 0.87)",
+      "timestamp": "00:00:13",
+      "message": "00:00:13 - truck spotted at Driveway (confidence: 0.81)",
       "detection": {
-        "class_id": 2,
-        "class_name": "car",
-        "confidence": 0.8727752739800347,
+        "class_id": 7,
+        "class_name": "truck",
+        "confidence": 0.8081376139558203,
         "bbox": [
-          1584,
-          256,
-          2016,
-          1024
+          449,
+          307,
+          856,
+          469
         ],
-        "timestamp": "00:00:30",
-        "location": "Gate",
-        "first_seen": "00:00:30",
-        "duration": 0.0,
-        "count": 601,
-        "altitude": 5.1,
+        "timestamp": "00:00:13",
+        "location": "Driveway",
+        "method": "CV",
+        "first_seen": "00:00:13",
+        "duration": 0,
+        "count": 1,
+        "altitude": 4.8,
         "drone_status": "monitoring",
-        "description": "Car detected at Gate, 00:00:30"
+        "description": "Truck spotted at Driveway, 00:00:13"
       }
     },
     {
-      "timestamp": "00:00:30",
-      "message": "00:00:30 - car spotted at Gate (confidence: 0.91)",
+      "timestamp": "00:00:14",
+      "message": "00:00:14 - truck spotted at Driveway (confidence: 0.89)",
       "detection": {
-        "class_id": 2,
-        "class_name": "car",
-        "confidence": 0.9101378445095486,
+        "class_id": 7,
+        "class_name": "truck",
+        "confidence": 0.8872621597001004,
         "bbox": [
-          864,
-          1536,
-          1296,
-          2304
+          713,
+          340,
+          1075,
+          529
         ],
-        "timestamp": "00:00:30",
-        "location": "Gate",
-        "first_seen": "00:00:30",
-        "duration": 0.0,
-        "count": 917,
-        "altitude": 5.1,
+        "timestamp": "00:00:14",
+        "location": "Driveway",
+        "method": "CV",
+        "first_seen": "00:00:14",
+        "duration": 0,
+        "count": 1,
+        "altitude": 4.8,
         "drone_status": "monitoring",
-        "description": "Car detected at Gate, 00:00:30"
+        "description": "Truck spotted at Driveway, 00:00:14"
       }
     },
     {
-      "timestamp": "00:00:30",
-      "message": "00:00:30 - car spotted at Gate (confidence: 0.90)",
+      "timestamp": "00:00:14",
+      "message": "00:00:14 - truck spotted at Driveway (confidence: 0.83)",
       "detection": {
-        "class_id": 2,
-        "class_name": "car",
-        "confidence": 0.9011284586588543,
+        "class_id": 7,
+        "class_name": "truck",
+        "confidence": 0.830420938339041,
         "bbox": [
-          144,
-          2816,
-          576,
-          3584
+          697,
+          340,
+          1062,
+          535
         ],
-        "timestamp": "00:00:30",
-        "location": "Gate",
-        "first_seen": "00:00:30",
-        "duration": 0.0,
-        "count": 917,
-        "altitude": 5.1,
+        "timestamp": "00:00:14",
+        "location": "Driveway",
+        "method": "CV",
+        "first_seen": "00:00:14",
+        "duration": 0,
+        "count": 1,
+        "altitude": 4.8,
         "drone_status": "monitoring",
-        "description": "Car detected at Gate, 00:00:30"
+        "description": "Truck spotted at Driveway, 00:00:14"
       }
     },
     {
-      "timestamp": "00:00:30",
-      "message": "00:00:30 - car spotted at Gate (confidence: 0.90)",
+      "timestamp": "00:00:14",
+      "message": "00:00:14 - car spotted at Driveway (confidence: 0.81)",
       "detection": {
         "class_id": 2,
         "class_name": "car",
-        "confidence": 0.9004154432508681,
+        "confidence": 0.8100529814699449,
         "bbox": [
-          144,
-          256,
-          576,
-          1024
+          963,
+          392,
+          1234,
+          523
         ],
-        "timestamp": "00:00:30",
-        "location": "Gate",
-        "first_seen": "00:00:30",
-        "duration": 0.0,
-        "count": 918,
-        "altitude": 5.1,
+        "timestamp": "00:00:14",
+        "location": "Driveway",
+        "method": "CV",
+        "first_seen": "00:00:14",
+        "duration": 0,
+        "count": 1,
+        "altitude": 4.8,
         "drone_status": "monitoring",
-        "description": "Car detected at Gate, 00:00:30"
+        "description": "Car detected at Driveway, 00:00:14"
       }
     },
     {
-      "timestamp": "00:00:30",
-      "message": "00:00:30 - car spotted at Gate (confidence: 0.87)",
+      "timestamp": "00:00:14",
+      "message": "00:00:14 - car spotted at Driveway (confidence: 0.83)",
       "detection": {
         "class_id": 2,
         "class_name": "car",
-        "confidence": 0.8728063530815973,
+        "confidence": 0.8301286442577973,
         "bbox": [
-          1584,
-          256,
-          2016,
-          1024
+          940,
+          377,
+          1234,
+          523
         ],
-        "timestamp": "00:00:30",
-        "location": "Gate",
-        "first_seen": "00:00:30",
-        "duration": 0.0,
-        "count": 602,
-        "altitude": 5.1,
+        "timestamp": "00:00:14",
+        "location": "Driveway",
+        "method": "CV",
+        "first_seen": "00:00:14",
+        "duration": 0,
+        "count": 1,
+        "altitude": 4.8,
         "drone_status": "monitoring",
-        "description": "Car detected at Gate, 00:00:30"
+        "description": "Car detected at Driveway, 00:00:14"
       }
     },
     {
-      "timestamp": "00:00:30",
-      "message": "00:00:30 - car spotted at Gate (confidence: 0.91)",
+      "timestamp": "00:00:14",
+      "message": "00:00:14 - truck spotted at Driveway (confidence: 0.89)",
       "detection": {
-        "class_id": 2,
-        "class_name": "car",
-        "confidence": 0.9107962239583334,
+        "class_id": 7,
+        "class_name": "truck",
+        "confidence": 0.8935133779359392,
         "bbox": [
-          864,
-          1536,
-          1296,
-          2304
+          96,
+          267,
+          540,
+          511
         ],
-        "timestamp": "00:00:30",
-        "location": "Gate",
-        "first_seen": "00:00:30",
-        "duration": 0.0,
-        "count": 918,
-        "altitude": 5.1,
+        "timestamp": "00:00:14",
+        "location": "Driveway",
+        "method": "CV",
+        "first_seen": "00:00:14",
+        "duration": 0,
+        "count": 1,
+        "altitude": 4.8,
         "drone_status": "monitoring",
-        "description": "Car detected at Gate, 00:00:30"
+        "description": "Truck spotted at Driveway, 00:00:14"
       }
     },
     {
-      "timestamp": "00:00:30",
-      "message": "00:00:30 - car spotted at Gate (confidence: 0.90)",
+      "timestamp": "00:00:14",
+      "message": "00:00:14 - car spotted at Driveway (confidence: 0.84)",
       "detection": {
         "class_id": 2,
         "class_name": "car",
-        "confidence": 0.9012935058593751,
+        "confidence": 0.8417323328140824,
         "bbox": [
-          144,
-          2816,
-          576,
-          3584
+          917,
+          374,
+          1230,
+          521
         ],
-        "timestamp": "00:00:30",
-        "location": "Gate",
-        "first_seen": "00:00:30",
-        "duration": 0.0,
-        "count": 918,
-        "altitude": 5.1,
+        "timestamp": "00:00:14",
+        "location": "Driveway",
+        "method": "CV",
+        "first_seen": "00:00:14",
+        "duration": 0,
+        "count": 1,
+        "altitude": 4.8,
         "drone_status": "monitoring",
-        "description": "Car detected at Gate, 00:00:30"
+        "description": "Car detected at Driveway, 00:00:14"
       }
     }
   ],
   "recent_alerts": [],
-  "processed_at": "2025-05-23 10:51:28"
+  "processed_at": "2025-05-23 23:34:14",
+  "using_real_video": true,
+  "frames_saved": true,
+  "video_file": "v (5).mp4"
 }

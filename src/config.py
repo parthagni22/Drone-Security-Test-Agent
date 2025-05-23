@@ -15,22 +15,21 @@ CONFIDENCE_THRESHOLD = 0.5
 NMS_THRESHOLD = 0.4
 CLASSES_OF_INTEREST = ["person", "car", "truck", "motorcycle", "bicycle"]
 
-# Alert rules
+# Enhanced alert rules for better detection
 ALERT_RULES = [
     {
-        "name": "Person Loitering",
+        "name": "Night Person Detection",
         "condition": {
             "object_type": "person",
-            "duration": 60,  # seconds
             "time_range": {"start": "22:00", "end": "06:00"}
         },
         "priority": "high"
     },
     {
-        "name": "Vehicle at Restricted Area",
+        "name": "Vehicle in Restricted Hours", 
         "condition": {
-            "object_type": ["car", "truck", "motorcycle"],
-            "location": "restricted_zone",
+            "object_type": ["car", "truck"],
+            "time_range": {"start": "23:00", "end": "05:00"}
         },
         "priority": "medium"
     },
@@ -38,9 +37,26 @@ ALERT_RULES = [
         "name": "Multiple People Gathering",
         "condition": {
             "object_type": "person",
-            "count": 3,
-            "time_range": {"start": "20:00", "end": "08:00"}
+            "count": 2,
+            "time_window": 300
         },
-        "priority": "low"
+        "priority": "medium"
+    },
+    {
+        "name": "Loitering Detection",
+        "condition": {
+            "object_type": "person",
+            "duration": 30,
+            "same_location": True
+        },
+        "priority": "high"
+    },
+    {
+        "name": "Large Vehicle Alert",
+        "condition": {
+            "object_type": "truck",
+            "confidence_threshold": 0.7
+        },
+        "priority": "medium"
     }
 ]

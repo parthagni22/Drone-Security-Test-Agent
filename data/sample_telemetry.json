@@ -12,5 +12,131 @@
     "altitude": 5.1,
     "battery": 97,
     "status": "monitoring"
+  },
+  {
+    "timestamp": "00:00:15",
+    "location": "Driveway",
+    "altitude": 4.8,
+    "battery": 97,
+    "status": "monitoring"
+  },
+  {
+    "timestamp": "00:00:20",
+    "location": "Driveway",
+    "altitude": 4.9,
+    "battery": 96,
+    "status": "monitoring"
+  },
+  {
+    "timestamp": "00:00:25",
+    "location": "Garage",
+    "altitude": 5.3,
+    "battery": 96,
+    "status": "monitoring"
+  },
+  {
+    "timestamp": "00:00:30",
+    "location": "Garage",
+    "altitude": 5.4,
+    "battery": 95,
+    "status": "monitoring"
+  },
+  {
+    "timestamp": "00:00:35",
+    "location": "Backyard",
+    "altitude": 6.0,
+    "battery": 95,
+    "status": "monitoring"
+  },
+  {
+    "timestamp": "00:00:40",
+    "location": "Backyard",
+    "altitude": 5.8,
+    "battery": 94,
+    "status": "monitoring"
+  },
+  {
+    "timestamp": "00:00:45",
+    "location": "Perimeter",
+    "altitude": 7.2,
+    "battery": 94,
+    "status": "monitoring"
+  },
+  {
+    "timestamp": "00:00:50",
+    "location": "Perimeter",
+    "altitude": 7.0,
+    "battery": 93,
+    "status": "monitoring"
+  },
+  {
+    "timestamp": "00:00:55",
+    "location": "Gate",
+    "altitude": 5.0,
+    "battery": 93,
+    "status": "monitoring"
+  },
+  {
+    "timestamp": "00:01:00",
+    "location": "Gate",
+    "altitude": 5.1,
+    "battery": 92,
+    "status": "monitoring"
+  },
+  {
+    "timestamp": "00:01:05",
+    "location": "Gate",
+    "altitude": 5.0,
+    "battery": 92,
+    "status": "alert"
+  },
+  {
+    "timestamp": "00:01:10",
+    "location": "Gate",
+    "altitude": 4.5,
+    "battery": 91,
+    "status": "alert"
+  },
+  {
+    "timestamp": "00:01:15",
+    "location": "Gate",
+    "altitude": 4.0,
+    "battery": 91,
+    "status": "alert"
+  },
+  {
+    "timestamp": "00:01:20",
+    "location": "Gate",
+    "altitude": 4.2,
+    "battery": 90,
+    "status": "monitoring"
+  },
+  {
+    "timestamp": "00:01:25",
+    "location": "Driveway",
+    "altitude": 4.8,
+    "battery": 90,
+    "status": "monitoring"
+  },
+  {
+    "timestamp": "00:01:30",
+    "location": "Driveway",
+    "altitude": 4.9,
+    "battery": 89,
+    "status": "monitoring"
+  },
+  {
+    "timestamp": "00:01:35",
+    "location": "Garage",
+    "altitude": 5.3,
+    "battery": 89,
+    "status": "monitoring"
+  },
+  {
+    "timestamp": "00:01:40",
+    "location": "Garage",
+    "altitude": 5.4,
+    "battery": 88,
+    "status": "monitoring"
   }
 ]
