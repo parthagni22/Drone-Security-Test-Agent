@@ -18,6 +18,9 @@ from analysis.context_analyzer import ContextAnalyzer
 from analysis.rule_engine import RuleEngine
 from storage.frame_indexer import FrameIndexer
 from storage.event_logger import EventLogger
+from analysis.vlm_descriptor import VLMFrameDescriptor  
+from analysis.langchain_agent import DroneSecurityAgent  # ADD THIS LINE
+from analysis.video_summarizer import VideoSummarizer  # ADD THIS LINE
 
 def auto_detect_video():
     """Auto-detect video file in data folder."""
@@ -95,7 +98,7 @@ def create_detections_from_description(description, timestamp):
     
     return detections
 
-def simulate_drone_security_system(video_path=None, telemetry_path=None, output_dir=None, num_frames=100, save_frames=True):
+def simulate_drone_security_system(video_path=None, telemetry_path=None, output_dir=None, num_frames=100, save_frames=True, use_vlm=True):
     """
     Run the complete drone security system simulation.
     """
@@ -119,6 +122,33 @@ def simulate_drone_security_system(video_path=None, telemetry_path=None, output_
     rule_engine = RuleEngine()
     frame_indexer = FrameIndexer()
     event_logger = EventLogger()
+    # NEW: Initialize Video Summarizer
+    video_summarizer = VideoSummarizer()
+    print("Video Summarization system ready!")
+    # NEW: Initialize VLM Frame Descriptor
+    vlm_descriptor = None
+    if use_vlm:
+        try:
+            print("🤖 Initializing VLM Frame Descriptor...")
+            vlm_descriptor = VLMFrameDescriptor()
+            print("✅ VLM ready for enhanced frame descriptions!")
+        except Exception as e:
+            print(f"⚠️  VLM initialization failed: {e}")
+            print("📝 Continuing without VLM descriptions...")
+        vlm_descriptor = None
+    
+    # NEW: Initialize LangChain Agent
+    langchain_agent = None
+    try:
+        print("🤖 Initializing LangChain Security Agent...")
+        langchain_agent = DroneSecurityAgent(enable_openai=False)  # Use local mode
+        print("✅ LangChain agent ready for contextual analysis!")
+    except Exception as e:
+        print(f"⚠️  LangChain agent initialization failed: {e}")
+        print("📝 Continuing without agent analysis...")
+        langchain_agent = None
+
+
     
     # Create output directories
     if output_dir:
@@ -167,15 +197,50 @@ def simulate_drone_security_system(video_path=None, telemetry_path=None, output_
             detection_count += len(detections)
             
             # Create frame data
+            # Get telemetry for location context
+            telemetry = telemetry_processor.get_telemetry_at_time(timestamp)
+            location = telemetry.get("location", "Unknown") if telemetry else "Unknown"
+
+            # NEW: Generate VLM description
+            vlm_description = None
+            if vlm_descriptor:
+                try:
+                    vlm_description = vlm_descriptor.generate_description(
+                    frame, timestamp, location, detections
+                )
+                except Exception as e:
+                    print(f"VLM Error for frame {frame_count}: {e}")
+
+            # Create enhanced frame data
             frame_data = {
                 "frame_idx": frame_count,
                 "timestamp": timestamp,
-                "description": f"Frame {frame_count} at {timestamp}"
+                "description": vlm_description if vlm_description else f"Frame {frame_count} at {timestamp}",
+                "vlm_enhanced": vlm_description is not None
             }
             
             # Analyze context
             context_data = context_analyzer.analyze_frame(frame_data, detections)
+
+            # NEW: LangChain Agent Analysis
+            agent_analysis = None
+            if langchain_agent:
+                try:
+                    agent_analysis = langchain_agent.analyze_security_event(
+                        frame_data, detections, vlm_description
+                    )
+
+                        # Add agent analysis  to context
+                    context_data["agent_analysis"] = agent_analysis
+        
+                    # Print agent    insights
+                    if agent_analysis and agent_analysis.get("risk_level") in ["high", "critical"]:
+                        print(f"🚨 Agent Alert: {agent_analysis['security_status']}")
+                        print(f"   Risk: {agent_analysis['risk_level'].upper()} ({agent_analysis['risk_score']})")
             
+                except Exception as e:
+                    print(f"Agent analysis error: {e}")
+
             # Evaluate security rules
             alerts = rule_engine.evaluate_frame(context_data)
             alert_count += len(alerts)
@@ -191,6 +256,15 @@ def simulate_drone_security_system(video_path=None, telemetry_path=None, output_
             frame_indexer.index_frame(frame_data, context_data)
             for alert in alerts:
                 frame_indexer.index_alert(alert)
+            
+            # NEW: Add to video summarizer
+            video_summarizer.add_frame_analysis(
+                frame_data, 
+                detections,
+                vlm_description,
+                agent_analysis,
+                alerts
+            )
             
             # Save processed frame
             if save_frames and output_dir:
@@ -290,19 +364,67 @@ def simulate_drone_security_system(video_path=None, telemetry_path=None, output_
     if using_real_video:
         video_processor.release()
     
+    try:
+        if 'video_summarizer' in locals() and video_summarizer:
+            print("Generating video summary...")
+            video_summary = video_summarizer.generate_session_summary()
+            one_sentence_summary = video_summarizer.generate_one_sentence_summary()
+        
+        # Ensure video_summary is a dictionary
+            if not isinstance(video_summary, dict):
+                print(f"WARNING: video_summary is {type(video_summary)}, creating default")
+                video_summary = {
+                    "security_assessment": {"security_level": "UNKNOWN", "security_score": 0},
+                    "insights_and_patterns": []
+                }
+        else:
+            video_summary = {
+                "security_assessment": {"security_level": "NOT_ANALYZED", "security_score": 0},
+                "insights_and_patterns": []
+            }
+            one_sentence_summary = "Video summary not generated"
+        
+    except Exception as e:
+        print(f"Error generating video summary: {e}")
+        video_summary = {
+            "security_assessment": {"security_level": "ERROR", "security_score": 0},
+            "insights_and_patterns": []
+        }
+        one_sentence_summary = f"Video summary error: {str(e)}"
+
     # Generate final summary
     summary = {
         "total_frames": frame_count,
         "total_detections": detection_count,
         "total_alerts": alert_count,
+        "vlm_enabled": vlm_descriptor is not None,
+        "langchain_agent_enabled": langchain_agent is not None,
+        "agent_conversation_summary": langchain_agent.get_conversation_summary() if langchain_agent else None,
         "recent_detections": event_logger.get_recent_detections(),
         "recent_alerts": event_logger.get_recent_alerts(),
         "processed_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "using_real_video": using_real_video,
         "frames_saved": save_frames,
-        "video_file": os.path.basename(video_path) if video_path else "Simulation"
+        "video_file": os.path.basename(video_path) if video_path else "Simulation",
+    
+        # Video Analysis Summary with safe access
+        "video_analysis_summary": video_summary,
+        "one_sentence_summary": one_sentence_summary,
+        "security_assessment": video_summary.get("security_assessment", {"security_level": "UNKNOWN"}),
+        "session_insights": video_summary.get("insights_and_patterns", [])
     }
     
+    
+    # Save video summary
+    if output_dir:
+        video_summary_path = os.path.join(output_dir, "video_summary.json")
+        video_summarizer.export_summary(video_summary_path, "json")
+    
+        text_summary_path = os.path.join(output_dir, "video_summary.txt") 
+        video_summarizer.export_summary(text_summary_path, "txt")
+    
+        print(f"Video summaries saved to {output_dir}")
+
     # Save results
     if output_dir:
         summary_path = os.path.join(output_dir, "summary.json")
@@ -339,6 +461,12 @@ def simulate_drone_security_system(video_path=None, telemetry_path=None, output_
     print(f"   • Vehicle detections: {len(vehicle_frames)} frames")
     print(f"   • High-priority alerts: {len(high_alerts)}")
     
+    # Display video summary results
+    print(f"\nVIDEO ANALYSIS SUMMARY:")
+    print(f"One-Sentence: {one_sentence_summary}")
+    print(f"Security Assessment: {video_summary['security_assessment']['security_level']}")
+    print(f"nSecurity Score: {video_summary['security_assessment']['security_score']}/100")
+    
     return {"summary": summary, "processed_frames": frame_count}
 
 def main():
@@ -348,6 +476,9 @@ def main():
     parser.add_argument("--output", type=str, default="output", help="Output directory")
     parser.add_argument("--frames", type=int, default=100, help="Number of frames (simulation mode)")
     parser.add_argument("--no-save-frames", action="store_true", help="Don't save frame images")
+    parser.add_argument("--disable-vlm", action="store_true", help="Disable VLM descriptions")  # ADD THIS LINE
+    
+
     
     args = parser.parse_args()
     
@@ -362,9 +493,10 @@ def main():
     
     telemetry_path = args.telemetry if args.telemetry else SAMPLE_TELEMETRY
     save_frames = not args.no_save_frames
+    use_vlm = not args.disable_vlm  # ADD THIS LINE
     
     # Run the system
-    simulate_drone_security_system(video_path, telemetry_path, args.output, args.frames, save_frames)
+    simulate_drone_security_system(video_path, telemetry_path, args.output, args.frames, save_frames, use_vlm)  # MODIFY THIS LINE
 
 if __name__ == "__main__":
     main()
