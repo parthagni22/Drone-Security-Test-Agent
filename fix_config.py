@@ -1,4 +1,8 @@
-# Configuration settings for the Drone Security Analyst Agent
+# Save this as fix_config.py and run it with: python fix_config.py
+
+def fix_config_file():
+    """Fix the config.py file by replacing its content."""
+    config_content = """# Configuration settings for the Drone Security Analyst Agent
 
 import os
 from pathlib import Path
@@ -44,3 +48,14 @@ ALERT_RULES = [
         "priority": "low"
     }
 ]
+"""
+    
+    try:
+        with open('src/config.py', 'w') as f:
+            f.write(config_content)
+        print("Successfully fixed src/config.py!")
+    except Exception as e:
+        print(f"Error fixing config.py: {e}")
+
+if __name__ == "__main__":
+    fix_config_file()

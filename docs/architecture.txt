@@ -1,1 +1,44 @@
 TODO: Replace with actual architecture diagram (PNG or SVG)
+flowchart TB
+    subgraph "Data Ingestion Layer"
+        A1[Video Frame Processor]
+        A2[Telemetry Data Processor]
+    end
+
+    subgraph "Analysis Layer"
+        B1[Object Detection Module]
+        B2[Context Analyzer]
+        B3[Rule Engine]
+    end
+
+    subgraph "Storage Layer"
+        C1[(Frame Index Database)]
+        C2[Event Logger]
+    end
+
+    subgraph "Alert System"
+        D1[Alert Generator]
+        D2[Notification Service]
+    end
+
+    subgraph "Query Interface"
+        E1[Search Engine]
+    end
+
+    %% Data flow connections
+    A1 -->|Video Frames| B1
+    A2 -->|Telemetry Data| B2
+    B1 -->|Detected Objects| B2
+    B2 -->|Contextualized Data| B3
+    B2 -->|Frame Metadata| C1
+    B3 -->|Security Alerts| D1
+    B3 -->|Event Data| C2
+    D1 -->|Alert Notifications| D2
+    C1 -.->|Query Results| E1
+    C2 -.->|Event History| E1
+
+    %% External connections
+    Video[Video Source] -->|Raw Video| A1
+    Drone[Drone Telemetry] -->|Position Data| A2
+    User[User Interface] -.->|Queries| E1
+    D2 -->|Alert Messages| User
