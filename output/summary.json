@@ -1,0 +1,237 @@
+{
+  "total_frames": 918,
+  "recent_detections": [
+    {
+      "timestamp": "00:00:30",
+      "message": "00:00:30 - car spotted at Gate (confidence: 0.91)",
+      "detection": {
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.9094230170355903,
+        "bbox": [
+          864,
+          1536,
+          1296,
+          2304
+        ],
+        "timestamp": "00:00:30",
+        "location": "Gate",
+        "first_seen": "00:00:30",
+        "duration": 0.0,
+        "count": 916,
+        "altitude": 5.1,
+        "drone_status": "monitoring",
+        "description": "Car detected at Gate, 00:00:30"
+      }
+    },
+    {
+      "timestamp": "00:00:30",
+      "message": "00:00:30 - car spotted at Gate (confidence: 0.90)",
+      "detection": {
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.901141845703125,
+        "bbox": [
+          144,
+          2816,
+          576,
+          3584
+        ],
+        "timestamp": "00:00:30",
+        "location": "Gate",
+        "first_seen": "00:00:30",
+        "duration": 0.0,
+        "count": 916,
+        "altitude": 5.1,
+        "drone_status": "monitoring",
+        "description": "Car detected at Gate, 00:00:30"
+      }
+    },
+    {
+      "timestamp": "00:00:30",
+      "message": "00:00:30 - car spotted at Gate (confidence: 0.90)",
+      "detection": {
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.9003809787326389,
+        "bbox": [
+          144,
+          256,
+          576,
+          1024
+        ],
+        "timestamp": "00:00:30",
+        "location": "Gate",
+        "first_seen": "00:00:30",
+        "duration": 0.0,
+        "count": 917,
+        "altitude": 5.1,
+        "drone_status": "monitoring",
+        "description": "Car detected at Gate, 00:00:30"
+      }
+    },
+    {
+      "timestamp": "00:00:30",
+      "message": "00:00:30 - car spotted at Gate (confidence: 0.87)",
+      "detection": {
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8727752739800347,
+        "bbox": [
+          1584,
+          256,
+          2016,
+          1024
+        ],
+        "timestamp": "00:00:30",
+        "location": "Gate",
+        "first_seen": "00:00:30",
+        "duration": 0.0,
+        "count": 601,
+        "altitude": 5.1,
+        "drone_status": "monitoring",
+        "description": "Car detected at Gate, 00:00:30"
+      }
+    },
+    {
+      "timestamp": "00:00:30",
+      "message": "00:00:30 - car spotted at Gate (confidence: 0.91)",
+      "detection": {
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.9101378445095486,
+        "bbox": [
+          864,
+          1536,
+          1296,
+          2304
+        ],
+        "timestamp": "00:00:30",
+        "location": "Gate",
+        "first_seen": "00:00:30",
+        "duration": 0.0,
+        "count": 917,
+        "altitude": 5.1,
+        "drone_status": "monitoring",
+        "description": "Car detected at Gate, 00:00:30"
+      }
+    },
+    {
+      "timestamp": "00:00:30",
+      "message": "00:00:30 - car spotted at Gate (confidence: 0.90)",
+      "detection": {
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.9011284586588543,
+        "bbox": [
+          144,
+          2816,
+          576,
+          3584
+        ],
+        "timestamp": "00:00:30",
+        "location": "Gate",
+        "first_seen": "00:00:30",
+        "duration": 0.0,
+        "count": 917,
+        "altitude": 5.1,
+        "drone_status": "monitoring",
+        "description": "Car detected at Gate, 00:00:30"
+      }
+    },
+    {
+      "timestamp": "00:00:30",
+      "message": "00:00:30 - car spotted at Gate (confidence: 0.90)",
+      "detection": {
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.9004154432508681,
+        "bbox": [
+          144,
+          256,
+          576,
+          1024
+        ],
+        "timestamp": "00:00:30",
+        "location": "Gate",
+        "first_seen": "00:00:30",
+        "duration": 0.0,
+        "count": 918,
+        "altitude": 5.1,
+        "drone_status": "monitoring",
+        "description": "Car detected at Gate, 00:00:30"
+      }
+    },
+    {
+      "timestamp": "00:00:30",
+      "message": "00:00:30 - car spotted at Gate (confidence: 0.87)",
+      "detection": {
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8728063530815973,
+        "bbox": [
+          1584,
+          256,
+          2016,
+          1024
+        ],
+        "timestamp": "00:00:30",
+        "location": "Gate",
+        "first_seen": "00:00:30",
+        "duration": 0.0,
+        "count": 602,
+        "altitude": 5.1,
+        "drone_status": "monitoring",
+        "description": "Car detected at Gate, 00:00:30"
+      }
+    },
+    {
+      "timestamp": "00:00:30",
+      "message": "00:00:30 - car spotted at Gate (confidence: 0.91)",
+      "detection": {
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.9107962239583334,
+        "bbox": [
+          864,
+          1536,
+          1296,
+          2304
+        ],
+        "timestamp": "00:00:30",
+        "location": "Gate",
+        "first_seen": "00:00:30",
+        "duration": 0.0,
+        "count": 918,
+        "altitude": 5.1,
+        "drone_status": "monitoring",
+        "description": "Car detected at Gate, 00:00:30"
+      }
+    },
+    {
+      "timestamp": "00:00:30",
+      "message": "00:00:30 - car spotted at Gate (confidence: 0.90)",
+      "detection": {
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.9012935058593751,
+        "bbox": [
+          144,
+          2816,
+          576,
+          3584
+        ],
+        "timestamp": "00:00:30",
+        "location": "Gate",
+        "first_seen": "00:00:30",
+        "duration": 0.0,
+        "count": 918,
+        "altitude": 5.1,
+        "drone_status": "monitoring",
+        "description": "Car detected at Gate, 00:00:30"
+      }
+    }
+  ],
+  "recent_alerts": [],
+  "processed_at": "2025-05-23 10:51:28"
+}

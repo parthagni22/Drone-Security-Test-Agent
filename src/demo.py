@@ -1,11 +1,3 @@
-"""
-Drone Security Analyst Agent - Interactive Demo
-
-This script provides an interactive demo of the Drone Security Analyst Agent.
-It runs the system in simulation mode and provides a simple interface to explore
-the results.
-"""
-
 import os
 import sys
 import time
@@ -13,9 +5,9 @@ import json
 from datetime import datetime
 import argparse
 
-# Add the parent directory to the Python path to import the modules
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
+# Add current directory to path for imports
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+from config import SAMPLE_VIDEO, SAMPLE_TELEMETRY
 from data_processor.video_processor import VideoProcessor
 from data_processor.telemetry_processor import TelemetryProcessor
 from analysis.object_detector import ObjectDetector
