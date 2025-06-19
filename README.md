@@ -83,7 +83,16 @@ python src/demo.py
 # Run simulation mode (no video required)
 python src/main.py --frames 100
 ```
+### 🎯 Application Modes
 
+This project provides **two independent applications** for different use cases:
+
+| Application | Purpose | Use Case | Requirements |
+|-------------|---------|----------|--------------|
+| **main.py** | Real video processing | Production monitoring | Video files required |
+| **demo.py** | Interactive demonstration | Showcase/testing | No video files needed |
+
+**Important**: These are completely separate applications - you can run either one independently.
 ## 📋 Installation & Setup
 
 ### 1. Clone Repository
@@ -126,7 +135,7 @@ mkdir models
 
 ### Main Application: `python src/main.py`
 
-**Purpose**: Process video footage and generate comprehensive security analysis
+**Purpose**: Process real video footage and generate comprehensive security analysis
 
 **What it does**:
 - Processes video frame-by-frame for object detection
@@ -134,6 +143,15 @@ mkdir models
 - Generates intelligent security alerts based on predefined rules
 - Creates annotated frames with detection boxes and confidence scores
 - Produces detailed analysis reports and summaries
+
+# Auto-detect video in data/ folder
+python src/main.py
+
+# Process specific video file
+python src/main.py --video path/to/your/video.mp4
+
+# Process without saving frame images
+python src/main.py --video my_video.mp4 --no-save-frames
 
 **Expected Output**:
 ```
@@ -177,11 +195,12 @@ Security Score: 78/100
 
 ### Interactive Demo: `python src/demo.py`
 
-**Purpose**: Interactive demonstration of system capabilities with menu-driven interface
+**Purpose**: Interactive demonstration of system capabilities with menu-driven interface without video files
 
 **What it does**:
-- Runs simulation with realistic security scenarios
+- Runs simulation with realistic security scenarios(No video files required)
 - Provides interactive menu for querying results
+- Uses simulated security scenarios
 - Demonstrates database query capabilities
 - Shows real-time alert generation
 
@@ -219,6 +238,12 @@ Generated 3 security alerts
 - Search by time ranges (e.g., "14:00:00" to "16:00:00")
 - Filter alerts by priority (high, medium, low)
 - View detection and alert history
+
+### 🔄 Can I Use Both?
+**Yes!** Run `main.py` first to process real videos, then `demo.py` to explore results interactively.
+- Run main.py first to process real videos and populate the database
+- Then run demo.py to interactively explore those results
+- Or run demo.py standalone for simulation-only demonstration
 
 ## 🎯 Core Features
 
