@@ -97,7 +97,7 @@ This project provides **two independent applications** for different use cases:
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/yourusername/drone-security-agent.git
+git clone https://github.com/parthagni22/drone-security-agent.git
 cd drone-security-agent
 ```
 
